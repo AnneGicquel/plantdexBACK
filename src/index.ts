@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
 import AppDataSource from "./data-source";
-// 🟢 import plantRouter from "./routes/PlantRoutes";
+import plantRouter from "./routes/PlantRoutes";
+import userRouter from "./routes/UserRoutes";
 
 
 AppDataSource.initialize()
@@ -15,7 +16,9 @@ AppDataSource.initialize()
       })
     ); // on paramètre le fait qu'une appli puisse faire des requête avec ces méthodes référencées
 
-    // 🟢 app.use("/api/plants", plantRouter);
+    app.use("/api/plants", plantRouter);
+    app.use("/api/users", userRouter);
+
 
     app.listen(process.env.PORT, () => {
       console.log(
