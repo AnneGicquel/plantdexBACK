@@ -12,7 +12,7 @@ export class Plant {
     soleil?: string;
 
     @Column({nullable: false})
-    arrosage?: string;
+    arrosage?: number;
 
     @Column({nullable: false})
     categorie?: string;
